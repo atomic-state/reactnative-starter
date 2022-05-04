@@ -14,6 +14,7 @@ function DataFetching() {
       <Text
         style={{
           marginVertical: 24,
+          fontSize: 10,
           fontFamily: "monospace",
         }}
       >
