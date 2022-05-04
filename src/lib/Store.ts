@@ -7,43 +7,33 @@ export const Store = {
    * Initialize `localStorage` like object
    */
   init() {
-    if (!storageExists) {
-      const newStorage: Storage = {
-        removeItem: (k: string) => {
-          if (storageExists) {
-            delete localStorage[k]
-          }
+    if (typeof localStorage === "undefined") {
+      global.localStorage = {} as any
+      global.localStorage = {
+        ...global.localStorage,
+        removeItem(k) {
+          delete localStorage[k]
           AsyncStorage.removeItem(k)
         },
-        setItem: (s: string, v: string) => {
-          if (storageExists) {
-            localStorage[s] = v
-          }
+        setItem(s, v) {
+          localStorage[s] = v
           AsyncStorage.setItem(s, v)
         },
-        getItem: (s: string, f: any) => {
-          if (storageExists) {
-            return localStorage[s]
-          }
+        clear() {},
+        getItem(s) {
+          return localStorage[s]
         },
-      } as any
-
-      // Load al saved items in AsyncStorage
-      AsyncStorage.getAllKeys().then((keys) => {
-        keys.map((k) => {
-          AsyncStorage.getItem(k).then((jsonValue) => {
-            localStorage[`${k}`] = jsonValue
+      }
+      // Load al saved keys present in localStorage
+      AsyncStorage.getAllKeys().then((k) => {
+        k.forEach((key) => {
+          AsyncStorage.getItem(key).then((jsonValue) => {
+            localStorage[key] = jsonValue
           })
         })
       })
-
-      // Set localStorage
-      global.localStorage = newStorage
     }
   },
-
-  // methods for working with async-storage data
-
   async get<T>(key: string) {
     const data = await AsyncStorage.getItem(`store-${key}`)
     const value = await JSON.parse(data as unknown as string)
