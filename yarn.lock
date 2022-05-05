@@ -1748,12 +1748,12 @@ atob@^2.1.2:
   resolved "https://registry.npmjs.org/atob/-/atob-2.1.2.tgz"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-atomic-state@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/atomic-state/-/atomic-state-1.4.2.tgz#f23f79ccefba806d1f5d2640e2160e70143bfe0c"
-  integrity sha512-FzSXHzoREvAIhox4CFQbwDoOQ7qhSkWR8ilWmmAoKP8V7iqudmYzhBnPN9CppcKhveflSLoXRTD6B3tyONvG0Q==
+atomic-state@^1.4.6:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/atomic-state/-/atomic-state-1.4.6.tgz#03be721339fdccc90fbea3abb20f7c56fc7581ed"
+  integrity sha512-SuBSNYQzUK+wLBpEpZHa/DOgcUVQLo0z4DaH3YmBVlKVQJrRMiGqD7UEfKzyMeT/+9TW3xnLAjbQLiAOhfsFhw==
   dependencies:
-    events "^3.3.0"
+    events "3.3.0"
 
 babel-core@^7.0.0-bridge.0:
   version "7.0.0-bridge.0"
@@ -2553,7 +2553,7 @@ event-target-shim@^5.0.0, event-target-shim@^5.0.1:
   resolved "https://registry.npmjs.org/event-target-shim/-/event-target-shim-5.0.1.tgz"
   integrity sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
 
-events@^3.3.0:
+events@3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
   integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==

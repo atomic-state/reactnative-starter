@@ -1,7 +1,8 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
-import { useAtom } from "atomic-state"
+import { useAtom, useFilter } from "atomic-state"
 
-import { timesTouchedAtom } from "atoms"
+import { doubleTouchedFilter, timesTouchedAtom } from "atoms"
+
 import { useHttp } from "lib/http"
 
 function DataFetching() {
@@ -26,10 +27,12 @@ function DataFetching() {
 
 export default function Home() {
   const [timesTouched, setTimesTouched] = useAtom(timesTouchedAtom)
+  const doubleTouched = useFilter(doubleTouchedFilter)
   return (
     <View style={styles.home}>
       <Text style={styles.mainText}>Welcome to React Native</Text>
       <Text>Times image was touched: {timesTouched}</Text>
+      <Text>Double: {doubleTouched}</Text>
       <TouchableOpacity
         onLongPress={() => setTimesTouched(0)}
         activeOpacity={0.85}
