@@ -1,7 +1,7 @@
 import { createHttpClient, fetcher } from "http-react-fetcher"
 
-export const useHttp = fetcher.extend({
+export const useRequest = fetcher.extend({
   baseUrl: "",
 })
 
-export const http = createHttpClient(useHttp.config.baseUrl)
+export const http = createHttpClient(useRequest.config.baseUrl)

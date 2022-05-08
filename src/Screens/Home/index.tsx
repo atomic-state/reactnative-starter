@@ -3,12 +3,11 @@ import { useAtom, useFilter } from "atomic-state"
 
 import { DOUBLE, TOUCHED } from "atoms"
 
-import { useHttp } from "lib/http"
+import { useRequest } from "lib/http"
 
 function DataFetching() {
-  const { data } = useHttp({
-    url: "https://jsonplaceholder.typicode.com/todos/10",
-  })
+  const { data } = useRequest("https://jsonplaceholder.typicode.com/todos/10")
+
   return (
     <View>
       <Text>Data fetching</Text>
