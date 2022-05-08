@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import { useAtom, useFilter } from "atomic-state"
 
-import { doubleTouchedFilter, timesTouchedAtom } from "atoms"
+import { DOUBLE, TOUCHED } from "atoms"
 
 import { useHttp } from "lib/http"
 
@@ -26,8 +26,8 @@ function DataFetching() {
 }
 
 export default function Home() {
-  const [timesTouched, setTimesTouched] = useAtom(timesTouchedAtom)
-  const doubleTouched = useFilter(doubleTouchedFilter)
+  const [timesTouched, setTimesTouched] = useAtom(TOUCHED)
+  const doubleTouched = useFilter(DOUBLE)
   return (
     <View style={styles.home}>
       <Text style={styles.mainText}>Welcome to React Native</Text>

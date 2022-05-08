@@ -4,28 +4,63 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack"
 
 // Home screen
 import Home from "Screens/Home"
+import { Feather } from "@expo/vector-icons"
+import { Text, View } from "react-native"
+import { useAtom } from "atomic-state"
+import { NAVIGATION } from "atoms"
 
 const Stack = createNativeStackNavigator()
 
 export default function Navigation() {
+  const [userNav, setNavigation] = useAtom(NAVIGATION)
   return (
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
           headerTintColor: "white",
+          statusBarHidden: false,
+          statusBarStyle: "dark",
           headerStyle: {
             backgroundColor: "black",
+          },
+          headerRight({ tintColor }) {
+            return (
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
+                <Text
+                  style={{
+                    color: tintColor,
+                    marginRight: 10,
+                  }}
+                >
+                  My sfuff
+                </Text>
+                <Feather size={18} name="shopping-bag" color="white" />
+              </View>
+            )
           },
         }}
       >
         <Stack.Screen
           name="Home"
-          component={Home}
           options={{
             headerShown: true,
           }}
-        />
+        >
+          {({ navigation }) => {
+            if (!userNav) {
+              setTimeout(() => {
+                setNavigation(navigation)
+              }, 0)
+            }
+            return <Home />
+          }}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   )
