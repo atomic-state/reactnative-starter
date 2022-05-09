@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import { useAtom, useFilter } from "atomic-state"
 
-import { DOUBLE, TOUCHED } from "atoms"
+import { TOUCHED, DOUBLE } from "atoms"
 
 import { useRequest } from "lib/http"
 
