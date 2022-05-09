@@ -17,13 +17,13 @@ function CartButton({ tintColor }: any) {
     <View
       style={{
         flexDirection: "row",
-        alignItems: "center",
+        alignItems: "center"
       }}
     >
       <Text
         style={{
           color: tintColor,
-          marginRight: 10,
+          marginRight: 10
         }}
       >
         My sfuff ({touched})
@@ -44,15 +44,15 @@ export default function Navigation() {
           statusBarHidden: false,
           statusBarStyle: "dark",
           headerStyle: {
-            backgroundColor: "black",
+            backgroundColor: "black"
           },
-          headerRight: CartButton,
+          headerRight: CartButton
         }}
       >
         <Stack.Screen
           name="Home"
           options={{
-            headerShown: true,
+            headerShown: true
           }}
         >
           {({ navigation }) => {

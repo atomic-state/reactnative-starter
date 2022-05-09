@@ -22,7 +22,7 @@ export const Store = {
         clear() {},
         getItem(s) {
           return localStorage[s]
-        },
+        }
       }
       // Load al saved keys present in localStorage
       AsyncStorage.getAllKeys().then((k) => {
@@ -52,7 +52,7 @@ export const Store = {
     if (storageExists) {
       localStorage.removeItem(key)
     }
-  },
+  }
 }
 
 export default Store

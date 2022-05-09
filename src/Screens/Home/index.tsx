@@ -15,7 +15,7 @@ function DataFetching() {
         style={{
           marginVertical: 24,
           fontSize: 10,
-          fontFamily: "monospace",
+          fontFamily: "monospace"
         }}
       >
         {JSON.stringify(data, null, 2)}
@@ -42,17 +42,17 @@ export default function Home() {
           width: "80%",
           height: 200,
           marginVertical: 32,
-          borderRadius: 10,
+          borderRadius: 10
         }}
       >
         <Image
           style={{
             width: "100%",
             height: "100%",
-            borderRadius: 10,
+            borderRadius: 10
           }}
           source={{
-            uri: "https://www.hola.com/us/images/026f-13ac8cc84b8c-e186928dd1f4-1000/horizontal-480/a-cat-playing-in-a-yard-in-beijing-china.jpg",
+            uri: "https://www.hola.com/us/images/026f-13ac8cc84b8c-e186928dd1f4-1000/horizontal-480/a-cat-playing-in-a-yard-in-beijing-china.jpg"
           }}
         />
       </TouchableOpacity>
@@ -69,10 +69,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "white",
     alignItems: "center",
-    width: "100%",
+    width: "100%"
   },
   mainText: {
     fontSize: 16,
-    fontWeight: "bold",
-  },
+    fontWeight: "bold"
+  }
 })
