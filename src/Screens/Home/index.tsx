@@ -3,27 +3,6 @@ import { useAtom, useFilter } from "atomic-state"
 
 import { TOUCHED, DOUBLE } from "atoms"
 
-import { useRequest } from "lib/http"
-
-function DataFetching() {
-  const { data } = useRequest("https://jsonplaceholder.typicode.com/todos/10")
-
-  return (
-    <View>
-      <Text>Data fetching</Text>
-      <Text
-        style={{
-          marginVertical: 24,
-          fontSize: 10,
-          fontFamily: "monospace"
-        }}
-      >
-        {JSON.stringify(data, null, 2)}
-      </Text>
-    </View>
-  )
-}
-
 export default function Home() {
   const [timesTouched, setTimesTouched] = useAtom(TOUCHED)
   const doubleTouched = useFilter(DOUBLE)
@@ -56,7 +35,6 @@ export default function Home() {
           }}
         />
       </TouchableOpacity>
-      <DataFetching />
     </View>
   )
 }
