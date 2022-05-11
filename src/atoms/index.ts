@@ -4,7 +4,15 @@ import { atom, filter } from "atomic-state"
 export const TOUCHED = atom({
   name: "TOUCHED",
   default: 0,
-  localStoragePersistence: true
+  localStoragePersistence: true,
+  effects: [
+    ({ state, dispatch }) => {
+      if (state === 10) {
+        console.log("Reseting cout")
+        dispatch(0)
+      }
+    }
+  ]
 })
 
 export const DOUBLE = filter({
