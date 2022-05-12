@@ -1,3 +1,5 @@
+import { useValue } from "atomic-state"
+import { NAVIGATION } from "atoms"
 import { useState } from "react"
 
 export function useBoolean(initialValue = false) {
@@ -64,4 +66,8 @@ export function useObject<T>(initialValue: T) {
   ]
 
   return end
+}
+
+export function useNavigation() {
+  return useValue(NAVIGATION)
 }
