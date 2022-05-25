@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import Home from "Screens/Home"
 import { Feather } from "@expo/vector-icons"
 import { Text, View } from "react-native"
-import { useAtom, useValue } from "atomic-state"
+import { useAtom, useValue } from "orange-bird"
 import { NAVIGATION, TOUCHED } from "atoms"
 
 const Stack = createNativeStackNavigator()

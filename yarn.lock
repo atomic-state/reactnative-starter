@@ -1762,7 +1762,7 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-atomic-state@^1.5.8:
+atomic-state@>=1.5.8:
   version "1.5.8"
   resolved "https://registry.yarnpkg.com/atomic-state/-/atomic-state-1.5.8.tgz#eac57d012b80fbff22a0a45045c6718504e1e080"
   integrity sha512-bCHsWT+yoyzB63Qm2KV1KsF2Izs5QVvY0Rd0P+8TyxahHqRtPgYMgmTGm+t2GdmIzBUG96mspvrVDJ2ey3gTJw==
@@ -3129,10 +3129,10 @@ http-errors@2.0.0:
     statuses "2.0.1"
     toidentifier "1.0.1"
 
-http-react-fetcher@^1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/http-react-fetcher/-/http-react-fetcher-1.3.4.tgz#a96458cacbcc3fd014b4e2119d9fdd5d2a57a0c8"
-  integrity sha512-Y2DqF+hYcg5yA1JjbYqrgWYWU4j3he4Y8jgJjiwRo7ICokR055Te/UTp4EwVhUK2QEx0FTD3KjmcBC/bYKNl+w==
+http-react-fetcher@>=1.3.4:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/http-react-fetcher/-/http-react-fetcher-1.3.5.tgz#9ad4fc2f8ef476fe4ad9081d57bc09082e3c3e71"
+  integrity sha512-kQoauKK+S79tT6PH99naD7eNKzmNl5KPCWE7XUOYKeVJTNvGsfweRwfnJ7ijBWxrt9nL5gsfcX26K1jM9ky9Fw==
 
 hyphenate-style-name@^1.0.2, hyphenate-style-name@^1.0.4:
   version "1.0.4"
@@ -4368,6 +4368,14 @@ ora@^3.4.0:
     log-symbols "^2.2.0"
     strip-ansi "^5.2.0"
     wcwidth "^1.0.1"
+
+orange-bird@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/orange-bird/-/orange-bird-0.0.2.tgz#373d304f54667de1ce2506cb56ebf936f22ea99b"
+  integrity sha512-BH4eu2W4VY0CKruhz1/59X9XHRbgym5GktxjrQoHBNjUQEWgN1t6VGvY1lfXizxHstfUUspReKZx+dUn+J3P+g==
+  dependencies:
+    atomic-state ">=1.5.8"
+    http-react-fetcher ">=1.3.4"
 
 os-tmpdir@^1.0.0:
   version "1.0.2"

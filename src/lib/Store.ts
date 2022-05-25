@@ -35,20 +35,20 @@ export const Store = {
     }
   },
   async get<T>(key: string) {
-    const data = await AsyncStorage.getItem(`store-${key}`)
+    const data = await AsyncStorage.getItem(`${key}`)
     const value = await JSON.parse(data as unknown as string)
     return value as T
   },
   async set<T>(key: string, data: T) {
     try {
-      await AsyncStorage.setItem(`store-${key}`, JSON.stringify(data))
+      await AsyncStorage.setItem(`${key}`, JSON.stringify(data))
       return true
     } catch (err) {
       throw err
     }
   },
   async remove(key: string) {
-    await AsyncStorage.removeItem(`store-${key}`)
+    await AsyncStorage.removeItem(`${key}`)
     if (storageExists) {
       localStorage.removeItem(key)
     }

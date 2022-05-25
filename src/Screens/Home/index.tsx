@@ -1,5 +1,5 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
-import { useAtom, useFilter } from "atomic-state"
+import { useAtom, useFilter } from "orange-bird"
 
 import { TOUCHED, DOUBLE } from "atoms"
 

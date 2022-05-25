@@ -1,11 +1,10 @@
 import { NavigationProp } from "@react-navigation/native"
-import { atom, filter } from "atomic-state"
+import { atom, filter } from "orange-bird"
 
 export const TOUCHED = atom({
   name: "TOUCHED",
   default: 0,
   localStoragePersistence: true,
-  hydration: false,
   effects: [
     ({ state, dispatch }) => {
       if (state === 10) {

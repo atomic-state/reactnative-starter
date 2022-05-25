@@ -1,4 +1,4 @@
-import { createHttpClient, fetcher } from "http-react-fetcher"
+import { createHttpClient, fetcher } from "orange-bird"
 
 export const useRequest = fetcher.extend({
   baseUrl: ""
