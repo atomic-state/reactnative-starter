@@ -1763,9 +1763,9 @@ atob@^2.1.2:
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
 atomic-state@>=1.5.8:
-  version "1.5.8"
-  resolved "https://registry.yarnpkg.com/atomic-state/-/atomic-state-1.5.8.tgz#eac57d012b80fbff22a0a45045c6718504e1e080"
-  integrity sha512-bCHsWT+yoyzB63Qm2KV1KsF2Izs5QVvY0Rd0P+8TyxahHqRtPgYMgmTGm+t2GdmIzBUG96mspvrVDJ2ey3gTJw==
+  version "1.5.9"
+  resolved "https://registry.yarnpkg.com/atomic-state/-/atomic-state-1.5.9.tgz#ec8f683f9ac591f0e13b626265c5089ec546d330"
+  integrity sha512-TCH7Byc7TawSlQZgpDnmbC5YGPxN3Gx0G2lMUsJUp559GGeRXmKU9u9f3PUoLb65rBsdYhRLMgfYOaMy76GWQA==
   dependencies:
     events "3.3.0"
 
@@ -4369,10 +4369,10 @@ ora@^3.4.0:
     strip-ansi "^5.2.0"
     wcwidth "^1.0.1"
 
-orange-bird@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/orange-bird/-/orange-bird-0.0.2.tgz#373d304f54667de1ce2506cb56ebf936f22ea99b"
-  integrity sha512-BH4eu2W4VY0CKruhz1/59X9XHRbgym5GktxjrQoHBNjUQEWgN1t6VGvY1lfXizxHstfUUspReKZx+dUn+J3P+g==
+orange-bird@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/orange-bird/-/orange-bird-0.0.3.tgz#587aedef288aac63a854aeaacc852f191ae9a245"
+  integrity sha512-YPDTg6P2zgAj2jc92HV6NzJ6mI9S5QwsSau42LCYgLYmSyY+Wy0N0eZvflpj+bAozmIykJvORlSy4c9d+keh7Q==
   dependencies:
     atomic-state ">=1.5.8"
     http-react-fetcher ">=1.3.4"
