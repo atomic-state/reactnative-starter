@@ -8,7 +8,6 @@ export const TOUCHED = atom({
   effects: [
     ({ state, dispatch }) => {
       if (state === 10) {
-        console.log("Reseting cout")
         dispatch(0)
       }
     }
