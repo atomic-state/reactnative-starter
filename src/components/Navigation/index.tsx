@@ -1,12 +1,11 @@
-import React from "react"
-import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import { NavigationContainer } from "@react-navigation/native"
+import { useAtom, useValue } from "orange-bird"
+import { Feather } from "@expo/vector-icons"
+import { Text, View } from "react-native"
 
 // Home screen
 import Home from "Screens/Home"
-import { Feather } from "@expo/vector-icons"
-import { Text, View } from "react-native"
-import { useAtom, useValue } from "orange-bird"
 import { NAVIGATION, TOUCHED } from "atoms"
 
 const Stack = createNativeStackNavigator()

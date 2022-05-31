@@ -4,19 +4,12 @@ import { atom, filter } from "orange-bird"
 export const TOUCHED = atom({
   name: "TOUCHED",
   default: 0,
-  localStoragePersistence: true,
-  effects: [
-    ({ state, dispatch }) => {
-      if (state === 10) {
-        dispatch(0)
-      }
-    }
-  ]
+  persist: true
 })
 
 export const DOUBLE = filter({
   name: "DOUBLE",
-  async get({ get }) {
+  get({ get }) {
     const timesTouched = get(TOUCHED)
     return timesTouched * 2
   }

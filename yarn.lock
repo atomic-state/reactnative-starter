@@ -1763,9 +1763,9 @@ atob@^2.1.2:
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
 atomic-state@>=1.5.8:
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/atomic-state/-/atomic-state-1.5.9.tgz#ec8f683f9ac591f0e13b626265c5089ec546d330"
-  integrity sha512-TCH7Byc7TawSlQZgpDnmbC5YGPxN3Gx0G2lMUsJUp559GGeRXmKU9u9f3PUoLb65rBsdYhRLMgfYOaMy76GWQA==
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/atomic-state/-/atomic-state-1.6.0.tgz#bd61dc0d60f1653f2065c7af67782fc94f7b54d0"
+  integrity sha512-N/moTpEDsU1XfPish/yP3o9efydB0hXRkmYF1tC4prmd8SL9NLaka7wZC1cmlUP/hsHBGJPTvyg9YTwwj9gihA==
   dependencies:
     events "3.3.0"
 
