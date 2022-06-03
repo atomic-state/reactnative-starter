@@ -4,6 +4,11 @@ import { atom, filter } from "orange-bird"
 export const TOUCHED = atom({
   name: "TOUCHED",
   default: 0,
+  effects: [
+    ({ state }) => {
+      return state <= 9
+    }
+  ],
   persist: true
 })
 
