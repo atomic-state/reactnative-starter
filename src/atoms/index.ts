@@ -1,16 +1,14 @@
 import { NavigationProp } from "@react-navigation/native"
 import { atom, filter } from "orange-bird"
 
-export const TOUCHED = atom<
-  number,
-  {
-    reset: undefined
-    update: number
-    change: {
-      type: "+" | "-" | "reset"
-    }
+type TouchedArgs = {
+  update: number
+  change: {
+    type: "+" | "-" | "reset"
   }
->({
+}
+
+export const TOUCHED = atom<number, TouchedArgs>({
   name: "TOUCHED",
   default: 0,
   effects: [
@@ -19,21 +17,19 @@ export const TOUCHED = atom<
     }
   ],
   actions: {
-    reset({ dispatch }) {
-      dispatch(0)
-    },
     update({ args, dispatch }) {
       dispatch(args)
     },
-    change({ args, dispatch }) {
-      if (args.type === "+") {
-        dispatch((c) => c + 1)
-      }
-      if (args.type === "-") {
-        dispatch((c) => c - 1)
-      }
-      if (args.type === "reset") {
-        dispatch(0)
+    change({ state, args, dispatch }) {
+      switch (args.type) {
+        case "-":
+          return dispatch(state - 1)
+        case "+":
+          return dispatch(state + 1)
+        case "reset":
+          return dispatch(0)
+        default:
+          break
       }
     }
   },
