@@ -4,7 +4,7 @@ import { useAtom, useFilter } from "orange-bird"
 import { TOUCHED, DOUBLE } from "atoms"
 
 export default function Home() {
-  const [timesTouched, setTimesTouched] = useAtom(TOUCHED)
+  const [timesTouched, setTimesTouched, touchedActions] = useAtom(TOUCHED)
   const doubleTouched = useFilter(DOUBLE)
   return (
     <View style={styles.home}>
@@ -12,10 +12,16 @@ export default function Home() {
       <Text>Times image was touched: {timesTouched}</Text>
       <Text>Double: {doubleTouched}</Text>
       <TouchableOpacity
-        onLongPress={() => setTimesTouched(0)}
+        onLongPress={() =>
+          touchedActions.change({
+            type: "reset"
+          })
+        }
         activeOpacity={0.85}
         onPress={() => {
-          setTimesTouched((t) => t + 1)
+          touchedActions.change({
+            type: "+"
+          })
         }}
         style={{
           width: "80%",
