@@ -1,11 +1,18 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
-import { useAtom, useFilter } from "orange-bird"
+import {
+  storage,
+  useAtom,
+  useFilter,
+  useStorage,
+  useStorageItem
+} from "orange-bird"
 
 import { TOUCHED, DOUBLE } from "atoms"
 
 export default function Home() {
   const [timesTouched, setTimesTouched, touchedActions] = useAtom(TOUCHED)
   const doubleTouched = useFilter(DOUBLE)
+
   return (
     <View style={styles.home}>
       <Text style={styles.mainText}>Welcome to React Native</Text>

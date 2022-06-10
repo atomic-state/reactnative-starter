@@ -1763,9 +1763,9 @@ atob@^2.1.2:
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
 atomic-state@>=1.5.8:
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/atomic-state/-/atomic-state-1.6.4.tgz#afba56d8e53a007e746cb3e759df08ac012797d9"
-  integrity sha512-pIlo0eAsZ0iEgeWwDmsLwgmFDAnlxpaLLv86kJR+FeswUWS+P0Wv4iccKncJS+xKEd240W1R78GdkCowY4x31Q==
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/atomic-state/-/atomic-state-1.6.5.tgz#26efc1000a825bf7296e1521bd28f2e1e0496560"
+  integrity sha512-py3P9w1+lbjIloHJxGhs3TA1X2IC2dBokmNf8Bl+Fb0p8NrFjuPNKaQ6usz+yvJbwk3ui5OH7RgMVhIaTnv8vQ==
   dependencies:
     events "3.3.0"
 
@@ -3130,9 +3130,9 @@ http-errors@2.0.0:
     toidentifier "1.0.1"
 
 http-react-fetcher@>=1.3.4:
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/http-react-fetcher/-/http-react-fetcher-1.3.5.tgz#9ad4fc2f8ef476fe4ad9081d57bc09082e3c3e71"
-  integrity sha512-kQoauKK+S79tT6PH99naD7eNKzmNl5KPCWE7XUOYKeVJTNvGsfweRwfnJ7ijBWxrt9nL5gsfcX26K1jM9ky9Fw==
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/http-react-fetcher/-/http-react-fetcher-1.4.0.tgz#73c8189db323492fd3879131fbe76b4c76f1d336"
+  integrity sha512-bmuUsyAFc4JG9SLi0B7UWz5oSKkwWQiWlizyxGgwPYtrhJYCXcXm/hwaSanCYHwibaBek/deJAB1+IiNCNhexA==
 
 hyphenate-style-name@^1.0.2, hyphenate-style-name@^1.0.4:
   version "1.0.4"
@@ -4369,10 +4369,10 @@ ora@^3.4.0:
     strip-ansi "^5.2.0"
     wcwidth "^1.0.1"
 
-orange-bird@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/orange-bird/-/orange-bird-0.0.3.tgz#587aedef288aac63a854aeaacc852f191ae9a245"
-  integrity sha512-YPDTg6P2zgAj2jc92HV6NzJ6mI9S5QwsSau42LCYgLYmSyY+Wy0N0eZvflpj+bAozmIykJvORlSy4c9d+keh7Q==
+orange-bird@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/orange-bird/-/orange-bird-0.0.4.tgz#d03e03e327b7a2b3d3d28db64525dcf40b069419"
+  integrity sha512-UaiXdaf802s4v9M+aHxtwFmNMLZ73n/Q6JrDe8CAAOcBfqK6i3n5EzF0/EI36b1c4NJy9ZpJtE97kzZthQnoMg==
   dependencies:
     atomic-state ">=1.5.8"
     http-react-fetcher ">=1.3.4"
