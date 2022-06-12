@@ -11,6 +11,7 @@ type TouchedArgs = {
 export const TOUCHED = atom<number, TouchedArgs>({
   name: "TOUCHED",
   default: 0,
+  ignoreKeyWarning: true,
   effects: [
     ({ state }) => {
       return state <= 9
@@ -45,5 +46,6 @@ export const DOUBLE = filter({
 })
 
 export const NAVIGATION = atom<NavigationProp<any>>({
+  ignoreKeyWarning: true,
   name: "NAVIGATION"
 })
