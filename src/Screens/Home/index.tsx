@@ -1,7 +1,8 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
-import { useAtom, useFilter } from "orange-bird"
+import { useAtom, useFilter } from "atomic-state"
 
-import { TOUCHED, DOUBLE } from "atoms"
+import { TOUCHED } from "states/atoms"
+import { DOUBLE } from "states/filters"
 
 export default function Home() {
   const [timesTouched, , touchedActions] = useAtom(TOUCHED)
