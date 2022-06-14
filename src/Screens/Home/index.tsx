@@ -1,12 +1,33 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import {
+  Button,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
+} from "react-native"
 import { useAtom, useFilter } from "atomic-state"
 
 import { TOUCHED } from "states/atoms"
 import { DOUBLE } from "states/filters"
+import { useRequest } from "lib/http"
 
 export default function Home() {
   const [timesTouched, , touchedActions] = useAtom(TOUCHED)
   const doubleTouched = useFilter(DOUBLE)
+
+  const { reFetch: getSomeData } = useRequest(
+    "https://jsonplaceholder.typicode.com/todos/" + timesTouched,
+    {
+      auto: false,
+      onResolve(data) {
+        alert(JSON.stringify(data, null, 2))
+      },
+      onError() {
+        alert("An error ocurred")
+      }
+    }
+  )
 
   return (
     <View style={styles.home}>
@@ -43,6 +64,7 @@ export default function Home() {
           }}
         />
       </TouchableOpacity>
+      <Button title="Fetch some data" onPress={getSomeData} />
     </View>
   )
 }
