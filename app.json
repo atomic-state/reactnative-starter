@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "app-client",
-    "slug": "app-client",
+    "name": "W React native",
+    "slug": "reactnative-start",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
