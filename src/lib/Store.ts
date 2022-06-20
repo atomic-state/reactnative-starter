@@ -19,7 +19,13 @@ export const Store = {
           },
           setItem(s, v) {
             localStorage[s] = v
-            AsyncStorage.setItem(s, v)
+
+            // Prevent saving undefined or null values
+            if (v !== null) {
+              if (typeof v !== "undefined") {
+                AsyncStorage.setItem(s, v)
+              }
+            }
           },
           clear() {},
           getItem(s) {
