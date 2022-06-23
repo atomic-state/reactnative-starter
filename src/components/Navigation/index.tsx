@@ -2,16 +2,19 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { NavigationContainer } from "@react-navigation/native"
 import { useAtom, useValue } from "atomic-state"
 import { Feather } from "@expo/vector-icons"
-import { Text, View } from "react-native"
+import { Text, TouchableOpacity, View } from "react-native"
 
 // Home screen
 import Home from "Screens/Home"
 import { NAVIGATION, TOUCHED } from "states/atoms"
+import MyStuff from "Screens/MyStuff"
+import { useNavigation } from "lib/hooks"
 
 const Stack = createNativeStackNavigator()
 
 function CartButton({ tintColor }: any) {
   const touched = useValue(TOUCHED)
+  const navigation = useNavigation()
   return (
     <View
       style={{
@@ -27,7 +30,14 @@ function CartButton({ tintColor }: any) {
       >
         My sfuff ({touched})
       </Text>
-      <Feather size={18} name="shopping-bag" color="white" />
+      <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          navigation.navigate("MyStuff")
+        }}
+      >
+        <Feather size={18} name="shopping-bag" color="white" />
+      </TouchableOpacity>
     </View>
   )
 }
@@ -63,6 +73,14 @@ export default function Navigation() {
             return <Home />
           }}
         </Stack.Screen>
+        <Stack.Screen
+          name="MyStuff"
+          options={{
+            headerShown: false,
+            animation: "slide_from_bottom"
+          }}
+          component={MyStuff}
+        ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   )
