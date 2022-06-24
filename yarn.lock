@@ -2064,10 +2064,10 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-atomic-state@^1.8.2:
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/atomic-state/-/atomic-state-1.8.2.tgz#6890629ad8c4abbc6f60f599593abd519efc1dfb"
-  integrity sha512-0e8wCk/qIxPdhvbFAe8gmS86yoUbsHWm90TFnPst6PXQE8FACLbRjX19VCEIXO6wO1BiIdnpZMNQfrsmGsv+Vw==
+atomic-state@^1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/atomic-state/-/atomic-state-1.8.3.tgz#6add4fb82117be68c10a28d96c021320c3e46593"
+  integrity sha512-SY/rV5LdXPeKcu7ScOHGX815caT3BS7rdH2f3dgY6tWHuWnHlFIRH4PgjNK6ORZAxRi6EzkifPi1XkzSWTG/cQ==
 
 babel-core@^7.0.0-bridge.0:
   version "7.0.0-bridge.0"
