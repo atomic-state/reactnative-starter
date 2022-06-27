@@ -8,3 +8,12 @@ export const DOUBLE = filter({
     return timesTouched * 2
   }
 })
+
+export const formatedText = filter({
+  name: "formatedText",
+  get({ read }) {
+    const double = read(DOUBLE)
+
+    return `formatted: {${double}}`
+  }
+})

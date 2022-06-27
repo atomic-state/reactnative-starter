@@ -9,8 +9,13 @@ import {
 import { useAtom, useFilter } from "atomic-state"
 
 import { TOUCHED } from "states/atoms"
-import { DOUBLE } from "states/filters"
+import { DOUBLE, formatedText } from "states/filters"
 import { useRequest } from "lib/http"
+
+function ShowFormattedText() {
+  const formatted = useFilter(formatedText)
+  return <Text>Double: {formatted}</Text>
+}
 
 export default function Home() {
   const [timesTouched, , touchedActions] = useAtom(TOUCHED)
@@ -34,6 +39,7 @@ export default function Home() {
       <Text style={styles.mainText}>Welcome to React Native</Text>
       <Text>Times image was touched: {timesTouched}</Text>
       <Text>Double: {doubleTouched}</Text>
+      <ShowFormattedText />
       <TouchableOpacity
         onLongPress={() =>
           touchedActions.change({
