@@ -10,7 +10,7 @@ import { useAtom, useFilter } from "atomic-state"
 
 import { TOUCHED } from "states/atoms"
 import { DOUBLE, formatedText } from "states/filters"
-import { useRequest } from "lib/http"
+import { useFetcher } from "http-react-fetcher"
 
 function ShowFormattedText() {
   const formatted = useFilter(formatedText)
@@ -21,9 +21,14 @@ export default function Home() {
   const [timesTouched, , touchedActions] = useAtom(TOUCHED)
   const doubleTouched = useFilter(DOUBLE)
 
-  const { reFetch: getSomeData } = useRequest(
-    "https://jsonplaceholder.typicode.com/todos/" + timesTouched,
+  const { reFetch: getSomeData } = useFetcher(
+    "https://jsonplaceholder.typicode.com/todos/[id]",
     {
+      config: {
+        params: {
+          id: timesTouched
+        }
+      },
       auto: false,
       onResolve(data) {
         alert(JSON.stringify(data, null, 2))
