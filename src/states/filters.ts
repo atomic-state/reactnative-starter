@@ -13,7 +13,6 @@ export const formatedText = filter({
   name: "formatedText",
   get({ read }) {
     const double = read(DOUBLE)
-
     return `formatted: {${double}}`
   }
 })
