@@ -2064,10 +2064,10 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-atomic-state@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/atomic-state/-/atomic-state-2.0.4.tgz#f19cc35ddbb4d0514826a5b0b20609f67182ba9b"
-  integrity sha512-Du/4DkJ0H4CdvfX6FSW+Ds9lNsYBGijHbrPLz8ALmUN9Gb3Up6JzKhmTEuzYYf8Jg+h4o4QVSZhRHZbW1fnHVQ==
+atomic-state@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/atomic-state/-/atomic-state-2.0.5.tgz#4a669248248da2b8a989c046318f5b1bd5b692d2"
+  integrity sha512-xl/SBD+iPhiuun3nbJDz9b9qLCL2YiG4fPGYQJ3n2CJ+Ig+Zwe6VZEeXdR5rQh3dKv52YpCfMGX+bTnN0coCXg==
   dependencies:
     events "^3.3.0"
 
