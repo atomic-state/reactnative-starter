@@ -1,18 +1,20 @@
 import { filter } from "atomic-state"
-import { TOUCHED } from "./atoms"
+import { touchedState } from "./atoms"
 
-export const DOUBLE = filter({
+export const doubleTouchedState = filter({
   name: "DOUBLE",
   get({ get }) {
-    const timesTouched = get(TOUCHED)
+    const timesTouched = get(touchedState)
+
     return timesTouched * 2
   }
 })
 
-export const formatedText = filter({
+export const formatedTextState = filter({
   name: "formatedText",
   get({ read }) {
-    const double = read(DOUBLE)
+    const double = read(doubleTouchedState)
+
     return `formatted: {${double}}`
   }
 })

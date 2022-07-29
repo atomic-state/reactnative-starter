@@ -1,69 +1,19 @@
-import {
-  Button,
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View
-} from "react-native"
-import { useAtom, useFilter } from "atomic-state"
+import { Image, StyleSheet, Text, View } from "react-native"
 
-import { TOUCHED } from "states/atoms"
-import { DOUBLE, formatedText } from "states/filters"
-import { useFetcher } from "http-react-fetcher"
-
-function ShowFormattedText() {
-  const formatted = useFilter(formatedText)
-  return <Text>Double: {formatted}</Text>
-}
+import UpdateTouchComponent from "components/Home/UpdateTouchComponent"
+import Touched from "components/Home/Touched"
+import DoubleTouched from "components/Home/DoubleTouched"
+import GetDataButton from "components/Home/GetDataButton"
+import FormattedText from "components/Home/FormattedText"
 
 export default function Home() {
-  const [timesTouched, , touchedActions] = useAtom(TOUCHED)
-  const doubleTouched = useFilter(DOUBLE)
-
-  const { reFetch: getSomeData } = useFetcher(
-    "https://jsonplaceholder.typicode.com/todos/[id]",
-    {
-      config: {
-        params: {
-          id: timesTouched
-        }
-      },
-      auto: false,
-      onResolve(data) {
-        alert(JSON.stringify(data, null, 2))
-      },
-      onError() {
-        alert("An error ocurred")
-      }
-    }
-  )
-
   return (
     <View style={styles.home}>
       <Text style={styles.mainText}>Welcome to React Native</Text>
-      <Text>Times image was touched: {timesTouched}</Text>
-      <Text>Double: {doubleTouched}</Text>
-      <ShowFormattedText />
-      <TouchableOpacity
-        onLongPress={() =>
-          touchedActions.change({
-            type: "reset"
-          })
-        }
-        activeOpacity={0.85}
-        onPress={() => {
-          touchedActions.change({
-            type: "+"
-          })
-        }}
-        style={{
-          width: "80%",
-          height: 200,
-          marginVertical: 32,
-          borderRadius: 10
-        }}
-      >
+      <Touched />
+      <DoubleTouched />
+      <FormattedText />
+      <UpdateTouchComponent>
         <Image
           style={{
             width: "100%",
@@ -74,8 +24,8 @@ export default function Home() {
             uri: "https://www.hola.com/us/images/026f-13ac8cc84b8c-e186928dd1f4-1000/horizontal-480/a-cat-playing-in-a-yard-in-beijing-china.jpg"
           }}
         />
-      </TouchableOpacity>
-      <Button title="Fetch some data" onPress={getSomeData} />
+      </UpdateTouchComponent>
+      <GetDataButton />
     </View>
   )
 }

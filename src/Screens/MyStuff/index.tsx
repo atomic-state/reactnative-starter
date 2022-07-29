@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View } from "react-native"
 import { useFilter, useValue } from "atomic-state"
 
-import { TOUCHED } from "states/atoms"
-import { DOUBLE } from "states/filters"
+import { touchedState } from "states/atoms"
+import { doubleTouchedState } from "states/filters"
 
 export default function MyStuff() {
-  const timesTouched = useValue(TOUCHED)
-  const doubleTouched = useFilter(DOUBLE)
+  const timesTouched = useValue(touchedState)
+  const doubleTouched = useFilter(doubleTouchedState)
 
   return (
     <View style={styles.home}>

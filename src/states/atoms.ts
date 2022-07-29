@@ -1,17 +1,16 @@
 import { NavigationProp } from "@react-navigation/native"
 import { atom } from "atomic-state"
 
-type TouchedArgs = {
+type TouchedActionsArgs = {
   update: number
   change: {
     type: "+" | "-" | "reset"
   }
 }
 
-export const TOUCHED = atom<number, TouchedArgs>({
-  name: "TOUCHED",
+export const touchedState = atom<number, TouchedActionsArgs>({
+  name: "touched",
   default: 0,
-  ignoreKeyWarning: true,
   effects: [
     ({ state }) => {
       return state <= 9
@@ -37,7 +36,6 @@ export const TOUCHED = atom<number, TouchedArgs>({
   persist: true
 })
 
-export const NAVIGATION = atom<NavigationProp<any>>({
-  ignoreKeyWarning: true,
-  name: "NAVIGATION"
+export const navigationState = atom<NavigationProp<any>>({
+  name: "navigation"
 })

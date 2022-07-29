@@ -1,6 +1,7 @@
 import Navigation from "components/Navigation"
 
 import AsyncStorage from "@react-native-async-storage/async-storage"
+import { AtomicState } from "atomic-state"
 
 if (typeof localStorage === "undefined") {
   // Using AsyncStorage as localStorage
@@ -8,5 +9,10 @@ if (typeof localStorage === "undefined") {
 }
 
 export default function App() {
-  return <Navigation />
+  return (
+    // AtomicState Root component
+    <AtomicState>
+      <Navigation />
+    </AtomicState>
+  )
 }

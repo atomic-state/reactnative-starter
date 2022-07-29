@@ -6,14 +6,14 @@ import { Text, TouchableOpacity, View } from "react-native"
 
 // Home screen
 import Home from "Screens/Home"
-import { NAVIGATION, TOUCHED } from "states/atoms"
+import { navigationState, touchedState } from "states/atoms"
 import MyStuff from "Screens/MyStuff"
 import { useNavigation } from "lib/hooks"
 
 const Stack = createNativeStackNavigator()
 
 function CartButton({ tintColor }: any) {
-  const touched = useValue(TOUCHED)
+  const touched = useValue(touchedState)
   const navigation = useNavigation()
   return (
     <View
@@ -43,7 +43,7 @@ function CartButton({ tintColor }: any) {
 }
 
 export default function Navigation() {
-  const [userNav, setNavigation] = useAtom(NAVIGATION)
+  const [userNav, setNavigation] = useAtom(navigationState)
   return (
     <NavigationContainer>
       <Stack.Navigator
