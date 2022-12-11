@@ -2,6 +2,7 @@ import Navigation from "components/Navigation"
 
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import { AtomicState } from "atomic-state"
+import { FetcherConfig } from "http-react-fetcher"
 
 if (typeof localStorage === "undefined") {
   // Using AsyncStorage as localStorage
@@ -12,7 +13,9 @@ export default function App() {
   return (
     // AtomicState Root component
     <AtomicState>
-      <Navigation />
+      <FetcherConfig baseUrl="https://jsonplaceholder.typicode.com">
+        <Navigation />
+      </FetcherConfig>
     </AtomicState>
   )
 }

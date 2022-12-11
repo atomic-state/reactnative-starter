@@ -21,7 +21,7 @@
     "expo": "^47.0.8",
     "expo-checkbox": "^2.2.2",
     "expo-status-bar": "^1.4.2",
-    "http-react-fetcher": "^1.9.6",
+    "http-react-fetcher": "^1.9.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-native": "^0.70.6",
