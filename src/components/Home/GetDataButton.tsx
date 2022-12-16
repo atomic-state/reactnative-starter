@@ -1,26 +1,28 @@
 import { useValue } from "atomic-state"
-import { useError, useFetch, useFetchId, useResolve } from "http-react-fetcher"
+import { useError, useFetch, useResolve } from "http-react-fetcher"
 import { Button } from "react-native"
 
 import { touchedState } from "states/atoms"
 
 export default function GetDataButton() {
-  const touched = useValue(touchedState)
+  const timesTouched = useValue(touchedState)
 
   const { reFetch } = useFetch("/todos/[id]", {
     id: "todo",
     config: {
       params: {
-        id: touched
+        id: timesTouched
       }
     },
     auto: false
   })
 
+  // Each useResolve call works as a 'useEffect' that only runs when a request completes
   useResolve("todo", (data) => {
     alert(JSON.stringify(data, null, 2))
   })
 
+  // Same for error. Each useError call only runs once after a request fails
   useError("todo", () => {
     alert("An error ocurred")
   })
