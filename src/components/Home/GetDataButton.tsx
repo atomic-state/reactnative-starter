@@ -1,5 +1,5 @@
 import { useValue } from "atomic-state"
-import { useFetch } from "http-react-fetcher"
+import { useError, useFetch, useFetchId, useResolve } from "http-react-fetcher"
 import { Button } from "react-native"
 
 import { touchedState } from "states/atoms"
@@ -7,20 +7,23 @@ import { touchedState } from "states/atoms"
 export default function GetDataButton() {
   const touched = useValue(touchedState)
 
-  const { reFetch: getSomeData } = useFetch("/todos/[id]", {
+  const { reFetch } = useFetch("/todos/[id]", {
+    id: "todo",
     config: {
       params: {
         id: touched
       }
     },
-    auto: false,
-    onResolve(data) {
-      alert(JSON.stringify(data, null, 2))
-    },
-    onError() {
-      alert("An error ocurred")
-    }
+    auto: false
   })
 
-  return <Button title="Fetch some data" onPress={getSomeData} />
+  useResolve("todo", (data) => {
+    alert(JSON.stringify(data, null, 2))
+  })
+
+  useError("todo", () => {
+    alert("An error ocurred")
+  })
+
+  return <Button title="Fetch some data" onPress={reFetch} />
 }
