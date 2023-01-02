@@ -2,7 +2,7 @@ import { useValue } from "atomic-state"
 import { useError, useFetch, useResolve } from "http-react-fetcher"
 import { Button } from "react-native"
 
-import { touchedState } from "states/atoms"
+import { touchedState } from "shared/states"
 
 export default function GetDataButton() {
   const timesTouched = useValue(touchedState)

@@ -4,11 +4,11 @@ import { useAtom, useValue } from "atomic-state"
 import { Feather } from "@expo/vector-icons"
 import { Text, TouchableOpacity, View } from "react-native"
 
-// Home screen
-import Home from "Screens/Home"
-import { navigationState, touchedState } from "states/atoms"
-import MyStuff from "Screens/MyStuff"
-import { useNavigation } from "lib/hooks"
+// Screens
+import { Home, MyStuff } from "screens"
+
+import { navigationState, touchedState } from "shared/states"
+import { useNavigation } from "shared/hooks"
 
 const Stack = createNativeStackNavigator()
 

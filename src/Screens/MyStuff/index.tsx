@@ -1,8 +1,7 @@
 import { StyleSheet, Text, View } from "react-native"
 import { useFilter, useValue } from "atomic-state"
 
-import { touchedState } from "states/atoms"
-import { doubleTouchedState } from "states/filters"
+import { touchedState, doubleTouchedState } from "shared/states"
 
 export default function MyStuff() {
   const timesTouched = useValue(touchedState)

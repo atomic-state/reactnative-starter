@@ -1,7 +1,7 @@
 import { useFilter } from "atomic-state"
 import { Text } from "react-native"
 
-import { formatedTextState } from "states/filters"
+import { formatedTextState } from "shared/states"
 
 export default function FormattedText() {
   const formattedText = useFilter(formatedTextState)

@@ -1,7 +1,7 @@
 import { TouchableOpacity } from "react-native"
 import { useActions } from "atomic-state"
 
-import { touchedState } from "states/atoms"
+import { touchedState } from "shared/states"
 
 export default function UpdateTouchComponent({ children }: any) {
   const touchedActions = useActions(touchedState)
