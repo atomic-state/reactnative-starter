@@ -1,15 +1,15 @@
-import { NavigationProp } from "@react-navigation/native"
-import { atom, filter } from "atomic-state"
+import { NavigationProp } from '@react-navigation/native'
+import { atom, filter } from 'atomic-state'
 
 type TouchedActionsArgs = {
   update: number
   change: {
-    type: "+" | "-" | "reset"
+    type: '+' | '-' | 'reset'
   }
 }
 
 export const touchedState = atom<number, TouchedActionsArgs>({
-  name: "touched",
+  name: 'touched',
   default: 0,
   effects: [
     ({ state }) => {
@@ -22,11 +22,11 @@ export const touchedState = atom<number, TouchedActionsArgs>({
     },
     change({ state, args, dispatch }) {
       switch (args.type) {
-        case "-":
+        case '-':
           return dispatch(state - 1)
-        case "+":
+        case '+':
           return dispatch(state + 1)
-        case "reset":
+        case 'reset':
           return dispatch(0)
         default:
           break
@@ -37,11 +37,11 @@ export const touchedState = atom<number, TouchedActionsArgs>({
 })
 
 export const navigationState = atom<NavigationProp<any>>({
-  name: "navigation"
+  name: 'navigation'
 })
 
 export const doubleTouchedState = filter({
-  name: "DOUBLE",
+  name: 'DOUBLE',
   get({ get }) {
     const timesTouched = get(touchedState)
 
@@ -50,7 +50,7 @@ export const doubleTouchedState = filter({
 })
 
 export const formatedTextState = filter({
-  name: "formatedText",
+  name: 'formatedText',
   get({ read }) {
     const double = read(doubleTouchedState)
 

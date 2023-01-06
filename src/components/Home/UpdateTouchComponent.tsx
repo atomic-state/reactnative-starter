@@ -1,7 +1,7 @@
-import { TouchableOpacity } from "react-native"
-import { useActions } from "atomic-state"
+import { TouchableOpacity } from 'react-native'
+import { useActions } from 'atomic-state'
 
-import { touchedState } from "shared/states"
+import { touchedState } from 'shared/states'
 
 export default function UpdateTouchComponent({ children }: any) {
   const touchedActions = useActions(touchedState)
@@ -10,17 +10,17 @@ export default function UpdateTouchComponent({ children }: any) {
     <TouchableOpacity
       onLongPress={() =>
         touchedActions.change({
-          type: "reset"
+          type: 'reset'
         })
       }
       activeOpacity={0.85}
       onPress={() => {
         touchedActions.change({
-          type: "+"
+          type: '+'
         })
       }}
       style={{
-        width: "80%",
+        width: '80%',
         height: 200,
         marginVertical: 32,
         borderRadius: 10

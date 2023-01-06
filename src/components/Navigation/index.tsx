@@ -1,14 +1,14 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { NavigationContainer } from "@react-navigation/native"
-import { useAtom, useValue } from "atomic-state"
-import { Feather } from "@expo/vector-icons"
-import { Text, TouchableOpacity, View } from "react-native"
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { NavigationContainer } from '@react-navigation/native'
+import { useAtom, useValue } from 'atomic-state'
+import { Feather } from '@expo/vector-icons'
+import { Text, TouchableOpacity, View } from 'react-native'
 
 // Screens
-import { Home, MyStuff } from "screens"
+import { Home, MyStuff } from 'screens'
 
-import { navigationState, touchedState } from "shared/states"
-import { useNavigation } from "shared/hooks"
+import { navigationState, touchedState } from 'shared/states'
+import { useNavigation } from 'shared/hooks'
 
 const Stack = createNativeStackNavigator()
 
@@ -18,8 +18,8 @@ function CartButton({ tintColor }: any) {
   return (
     <View
       style={{
-        flexDirection: "row",
-        alignItems: "center"
+        flexDirection: 'row',
+        alignItems: 'center'
       }}
     >
       <Text
@@ -33,10 +33,10 @@ function CartButton({ tintColor }: any) {
       <TouchableOpacity
         activeOpacity={0.5}
         onPress={() => {
-          navigation.navigate("MyStuff")
+          navigation.navigate('MyStuff')
         }}
       >
-        <Feather size={18} name="shopping-bag" color="white" />
+        <Feather size={18} name='shopping-bag' color='white' />
       </TouchableOpacity>
     </View>
   )
@@ -47,19 +47,19 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName='Home'
         screenOptions={{
-          headerTintColor: "white",
+          headerTintColor: 'white',
           statusBarHidden: false,
-          statusBarStyle: "dark",
+          statusBarStyle: 'dark',
           headerStyle: {
-            backgroundColor: "black"
+            backgroundColor: 'black'
           },
           headerRight: CartButton
         }}
       >
         <Stack.Screen
-          name="Home"
+          name='Home'
           options={{
             headerShown: true
           }}
@@ -74,10 +74,10 @@ export default function Navigation() {
           }}
         </Stack.Screen>
         <Stack.Screen
-          name="MyStuff"
+          name='MyStuff'
           options={{
             headerShown: false,
-            animation: "slide_from_bottom"
+            animation: 'slide_from_bottom'
           }}
           component={MyStuff}
         ></Stack.Screen>

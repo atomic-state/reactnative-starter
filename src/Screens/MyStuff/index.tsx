@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View } from "react-native"
-import { useFilter, useValue } from "atomic-state"
+import { StyleSheet, Text, View } from 'react-native'
+import { useFilter, useValue } from 'atomic-state'
 
-import { touchedState, doubleTouchedState } from "shared/states"
+import { touchedState, doubleTouchedState } from 'shared/states'
 
 export default function MyStuff() {
   const timesTouched = useValue(touchedState)
@@ -21,13 +21,13 @@ const styles = StyleSheet.create({
     paddingVertical: 32,
     paddingHorizontal: 12,
     flex: 1,
-    justifyContent: "center",
-    backgroundColor: "white",
-    alignItems: "center",
-    width: "100%"
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    alignItems: 'center',
+    width: '100%'
   },
   mainText: {
     fontSize: 16,
-    fontWeight: "bold"
+    fontWeight: 'bold'
   }
 })
