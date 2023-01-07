@@ -1,18 +1,12 @@
-import { AtomicState, PersistenceStoreType } from 'atomic-state'
+import { AtomicState } from 'atomic-state'
 import { FetcherConfig } from 'http-react-fetcher'
 
-import { getItemAsync, setItemAsync, deleteItemAsync } from 'expo-secure-store'
-const SecureStorePersistence: PersistenceStoreType = {
-  getItem: getItemAsync,
-  setItem: setItemAsync,
-  removeItem: deleteItemAsync
-}
-
 import Navigation from 'components/Navigation'
+import SecureStoreProvider from 'shared/secure-store-provider'
 
 export default function App() {
   return (
-    <AtomicState persistenceProvider={SecureStorePersistence}>
+    <AtomicState persistenceProvider={SecureStoreProvider}>
       <FetcherConfig baseUrl='https://jsonplaceholder.typicode.com'>
         <Navigation />
       </FetcherConfig>
