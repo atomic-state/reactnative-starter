@@ -1,10 +1,9 @@
-import { useFilter } from 'atomic-state'
 import { Text } from 'react-native'
 
-import { doubleTouchedState } from 'shared/states'
+import { useAppFilter } from 'shared/hooks'
 
 export default function DoubleTouched() {
-  const doubleTouched = useFilter(doubleTouchedState)
+  const doubleTouched = useAppFilter('doubleTouched')
 
   return <Text>Double: {doubleTouched}</Text>
 }

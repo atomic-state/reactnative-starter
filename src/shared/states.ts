@@ -1,14 +1,7 @@
 import { NavigationProp } from '@react-navigation/native'
 import { atom, filter } from 'atomic-state'
 
-type TouchedActionsArgs = {
-  update: number
-  change: {
-    type: '+' | '-' | 'reset'
-  }
-}
-
-export const touchedState = atom<number, TouchedActionsArgs>({
+export const touchedState = atom<number>({
   name: 'touched',
   default: 0,
   effects: [
@@ -57,3 +50,13 @@ export const formatedTextState = filter({
     return `formatted: {${double}}`
   }
 })
+
+export const appAtoms = {
+  touched: touchedState,
+  navigation: navigationState
+}
+
+export const appFilters = {
+  doubleTouched: doubleTouchedState,
+  formatedText: formatedTextState
+}

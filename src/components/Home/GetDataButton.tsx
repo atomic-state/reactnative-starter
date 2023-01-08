@@ -1,11 +1,10 @@
-import { useValue } from 'atomic-state'
 import { useError, useFetch, useResolve } from 'http-react-fetcher'
 import { Button } from 'react-native'
 
-import { touchedState } from 'shared/states'
+import { useAppAtom } from 'shared/hooks'
 
 export default function GetDataButton() {
-  const timesTouched = useValue(touchedState)
+  const timesTouched = useAppAtom('touched').value
 
   const { reFetch } = useFetch('/todos/[id]', {
     id: 'todo',

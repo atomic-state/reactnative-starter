@@ -15,7 +15,7 @@
     "@react-native-picker/picker": "^2.4.8",
     "@react-navigation/native": "^6.1.0",
     "@react-navigation/native-stack": "^6.9.5",
-    "atomic-state": "^2.2.5",
+    "atomic-state": "^2.2.6",
     "babel-plugin-module-resolve": "^1.4.4",
     "date-fns": "^2.29.3",
     "expo": "^47.0.8",

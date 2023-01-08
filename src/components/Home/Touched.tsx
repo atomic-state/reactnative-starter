@@ -1,10 +1,9 @@
 import { Text } from 'react-native'
-import { useValue } from 'atomic-state'
 
-import { touchedState } from 'shared/states'
+import { useAppAtom } from 'shared/hooks'
 
 export default function Touched() {
-  const touched = useValue(touchedState)
+  const touched = useAppAtom('touched').value
 
   return <Text>Times image was touched: {touched}</Text>
 }
