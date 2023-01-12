@@ -1,4 +1,4 @@
-import { useError, useFetch, useResolve } from 'http-react-fetcher'
+import { useError, useFetch, useResolve } from 'http-react'
 import { Button } from 'react-native'
 
 import { useAppAtom } from 'shared/hooks'

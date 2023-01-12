@@ -1,5 +1,5 @@
 import { AtomicState } from 'atomic-state'
-import { FetcherConfig } from 'http-react-fetcher'
+import { FetcherConfig } from 'http-react'
 
 import Navigation from 'components/Navigation'
 import SecureStoreProvider from 'shared/secure-store-provider'
