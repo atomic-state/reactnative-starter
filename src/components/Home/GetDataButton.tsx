@@ -8,10 +8,8 @@ export default function GetDataButton() {
 
   const { reFetch } = useFetch('/todos/[id]', {
     id: 'todo',
-    config: {
-      params: {
-        id: timesTouched
-      }
+    params: {
+      id: timesTouched
     },
     auto: false
   })
