@@ -11,7 +11,10 @@ export default function GetDataButton() {
     params: {
       id: timesTouched
     },
-    auto: false
+    auto: false,
+    onResolve(data) {
+      console.log(data)
+    }
   })
 
   // Each useResolve call works as a 'useEffect' that only runs when a request completes
