@@ -7,7 +7,10 @@ import SecureStoreProvider from 'shared/secure-store-provider'
 export default function App() {
   return (
     <AtomicState persistenceProvider={SecureStoreProvider}>
-      <FetchConfig baseUrl='https://jsonplaceholder.typicode.com'>
+      <FetchConfig
+        baseUrl='https://jsonplaceholder.typicode.com'
+        fetcher={fetch}
+      >
         <Navigation />
       </FetchConfig>
     </AtomicState>

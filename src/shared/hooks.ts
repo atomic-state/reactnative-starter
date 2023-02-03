@@ -1,5 +1,5 @@
 import { atomProvider, filterProvider } from 'atomic-state'
-import { useFetch } from 'http-react'
+import useFetch from 'http-react'
 
 import { appAtoms, appFilters } from 'shared/states'
 
