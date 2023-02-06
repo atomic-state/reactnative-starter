@@ -1,20 +1,20 @@
 import { useData, useFetchId } from 'http-react'
 import { StyleSheet, Text, View } from 'react-native'
 
-import { useAppAtom, useAppFilter } from 'shared/hooks'
+import { useAppAtom, useAppFilter, useTodo } from 'shared/hooks'
 
 export default function MyStuff() {
   const timesTouched = useAppAtom('touched').value
   const doubleTouched = useAppFilter('doubleTouched')
 
-  const lastTodoData = useData('todo')
+  const { data } = useTodo()
 
   return (
     <View style={styles.home}>
       <Text style={styles.mainText}>My stuff</Text>
       <Text>Times image was touched: {timesTouched}</Text>
       <Text>Double: {doubleTouched}</Text>
-      <Text>{JSON.stringify(lastTodoData, null, 2)}</Text>
+      <Text>{JSON.stringify(data, null, 2)}</Text>
     </View>
   )
 }
