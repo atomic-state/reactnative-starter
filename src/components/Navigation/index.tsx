@@ -4,7 +4,7 @@ import { Feather } from '@expo/vector-icons'
 import { Text, TouchableOpacity, View } from 'react-native'
 
 // Screens
-import { Home, MyStuff } from 'screens'
+import { Home, MyStuff } from 'Screens'
 
 import { useAppAtom, useNavigation } from 'shared/hooks'
 
