@@ -1,11 +1,11 @@
 import { atomProvider, filterProvider } from 'atomic-state'
 import useFetch from 'http-react'
 
-import { appAtoms, appFilters } from 'shared/states'
+import { atoms, filters } from 'shared/states'
 
-export const useAppAtom = atomProvider(appAtoms)
+export const useAppAtom = atomProvider(atoms)
 
-export const useAppFilter = filterProvider(appFilters)
+export const useAppFilter = filterProvider(filters)
 
 export function useNavigation() {
   return useAppAtom('navigation').value

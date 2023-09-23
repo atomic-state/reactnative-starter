@@ -34,7 +34,7 @@ export const navigationState = atom<NavigationProp<any>>({
 })
 
 export const doubleTouchedState = filter({
-  name: 'DOUBLE',
+  name: 'double',
   get({ get }) {
     const timesTouched = get(touchedState)
 
@@ -44,19 +44,19 @@ export const doubleTouchedState = filter({
 
 export const formatedTextState = filter({
   name: 'formatedText',
-  get({ read }) {
-    const double = read(doubleTouchedState)
+  get({ get }) {
+    const double = get(doubleTouchedState)
 
     return `formatted: {${double}}`
   }
 })
 
-export const appAtoms = {
+export const atoms = {
   touched: touchedState,
   navigation: navigationState
 }
 
-export const appFilters = {
+export const filters = {
   doubleTouched: doubleTouchedState,
   formatedText: formatedTextState
 }
