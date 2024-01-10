@@ -1,8 +1,8 @@
 import { NavigationProp } from '@react-navigation/native'
-import { atom, filter } from 'atomic-state'
+import { atom } from 'atomic-state'
 
-export const touchedState = atom<number>({
-  name: 'touched',
+export const touchedState = atom({
+  key: 'touched',
   default: 0,
   effects: [
     ({ state }) => {
@@ -30,33 +30,22 @@ export const touchedState = atom<number>({
 })
 
 export const navigationState = atom<NavigationProp<any>>({
-  name: 'navigation'
+  key: 'navigation'
 })
 
-export const doubleTouchedState = filter({
-  name: 'double',
+export const doubleTouchedState = atom({
+  key: 'double',
   get({ get }) {
     const timesTouched = get(touchedState)
-
     return timesTouched * 2
   }
 })
 
-export const formatedTextState = filter({
-  name: 'formatedText',
+export const formatedTextState = atom({
+  key: 'formatedText',
   get({ get }) {
     const double = get(doubleTouchedState)
 
     return `formatted: {${double}}`
   }
 })
-
-export const atoms = {
-  touched: touchedState,
-  navigation: navigationState
-}
-
-export const filters = {
-  doubleTouched: doubleTouchedState,
-  formatedText: formatedTextState
-}

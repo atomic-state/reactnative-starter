@@ -1,17 +1,16 @@
 import { AtomicState } from 'atomic-state'
 import { FetchConfig } from 'http-react'
 
-import Navigation from 'components/Navigation'
+import Navigation from '@/components/Navigation'
 
-import * as SecureStore from 'expo-secure-store'
+import { getItemAsync, setItemAsync, deleteItemAsync } from 'expo-secure-store'
+
+const secureStore = { getItemAsync, setItemAsync, deleteItemAsync }
 
 export default function App() {
   return (
-    <AtomicState persistenceProvider={SecureStore}>
-      <FetchConfig
-        baseUrl='https://jsonplaceholder.typicode.com'
-        fetcher={fetch}
-      >
+    <AtomicState persistenceProvider={secureStore}>
+      <FetchConfig baseUrl='https://jsonplaceholder.typicode.com'>
         <Navigation />
       </FetchConfig>
     </AtomicState>

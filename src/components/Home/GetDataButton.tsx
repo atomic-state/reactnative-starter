@@ -1,6 +1,6 @@
 import { Button } from 'react-native'
 
-import { useTodo } from 'shared/hooks'
+import { useTodo } from '@/hooks'
 
 export default function GetDataButton() {
   const { reFetch } = useTodo()

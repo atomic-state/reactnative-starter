@@ -1,10 +1,10 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 
-import UpdateTouchComponent from 'components/Home/UpdateTouchComponent'
-import Touched from 'components/Home/Touched'
-import DoubleTouched from 'components/Home/DoubleTouched'
-import GetDataButton from 'components/Home/GetDataButton'
-import FormattedText from 'components/Home/FormattedText'
+import UpdateTouchComponent from '@/components/Home/UpdateTouchComponent'
+import DoubleTouched from '@/components/Home/DoubleTouched'
+import GetDataButton from '@/components/Home/GetDataButton'
+import FormattedText from '@/components/Home/FormattedText'
+import Touched from '@/components/Home/Touched'
 
 export default function Home() {
   return (

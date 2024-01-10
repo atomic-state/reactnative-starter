@@ -1,11 +1,12 @@
-import { useData, useFetchId } from 'http-react'
 import { StyleSheet, Text, View } from 'react-native'
+import { useValue } from 'atomic-state'
 
-import { useAppAtom, useAppFilter, useTodo } from 'shared/hooks'
+import { useTodo } from '@/hooks'
+import { doubleTouchedState, touchedState } from '@/states'
 
 export default function MyStuff() {
-  const timesTouched = useAppAtom('touched').value
-  const doubleTouched = useAppFilter('doubleTouched')
+  const timesTouched = useValue(touchedState)
+  const doubleTouched = useValue(doubleTouchedState)
 
   const { data } = useTodo()
 

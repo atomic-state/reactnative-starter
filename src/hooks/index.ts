@@ -1,18 +1,14 @@
-import { atomProvider, filterProvider } from 'atomic-state'
+import { useValue } from 'atomic-state'
 import useFetch from 'http-react'
 
-import { atoms, filters } from 'shared/states'
-
-export const useAppAtom = atomProvider(atoms)
-
-export const useAppFilter = filterProvider(filters)
+import { navigationState, touchedState } from '@/states'
 
 export function useNavigation() {
-  return useAppAtom('navigation').value
+  return useValue(navigationState)
 }
 
 export function useTodo() {
-  const timesTouched = useAppAtom('touched').value
+  const timesTouched = useValue(touchedState)
 
   return useFetch('/todos/[id]', {
     id: 'todo',
