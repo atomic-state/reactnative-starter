@@ -1,4 +1,4 @@
-import { useValue } from 'atomic-state'
+import { useValue } from 'atomic-utils'
 import { Text } from 'react-native'
 
 import { touchedState } from '@/states'

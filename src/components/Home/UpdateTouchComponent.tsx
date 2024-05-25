@@ -1,4 +1,4 @@
-import { useActions } from 'atomic-state'
+import { useActions } from 'atomic-utils'
 import { TouchableOpacity } from 'react-native'
 
 import { touchedState } from '@/states'

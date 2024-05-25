@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'
 import { Feather } from '@expo/vector-icons'
-import { useAtom, useValue } from 'atomic-state'
+import { useAtom, useValue } from 'atomic-utils'
 import { Text, TouchableOpacity, View } from 'react-native'
 
 // Screens

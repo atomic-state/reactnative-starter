@@ -1,5 +1,4 @@
-import { useValue } from 'atomic-state'
-import useFetch from 'http-react'
+import { useValue, useFetch } from 'atomic-utils'
 
 import { navigationState, touchedState } from '@/states'
 

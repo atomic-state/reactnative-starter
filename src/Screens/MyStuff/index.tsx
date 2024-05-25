@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import { useValue } from 'atomic-state'
+import { useValue } from 'atomic-utils'
 
 import { useTodo } from '@/hooks'
 import { doubleTouchedState, touchedState } from '@/states'

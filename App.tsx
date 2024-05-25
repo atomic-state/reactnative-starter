@@ -1,5 +1,4 @@
-import { AtomicState } from 'atomic-state'
-import { FetchConfig } from 'http-react'
+import { AtomicState, FetchConfig } from 'atomic-utils'
 
 import Navigation from '@/components/Navigation'
 

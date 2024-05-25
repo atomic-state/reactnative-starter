@@ -1,5 +1,5 @@
 import { NavigationProp } from '@react-navigation/native'
-import { atom } from 'atomic-state'
+import { atom } from 'atomic-utils'
 
 export const touchedState = atom({
   key: 'touched',
