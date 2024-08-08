@@ -1,12 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
-import { useValue } from 'atomic-utils'
 
 import { useTodo } from '@/hooks'
-import { doubleTouchedState, touchedState } from '@/states'
+import { useDoubleTouched, useTouched } from '@/states'
 
 export default function MyStuff() {
-  const timesTouched = useValue(touchedState)
-  const doubleTouched = useValue(doubleTouchedState)
+  const timesTouched = useTouched()
+  const doubleTouched = useDoubleTouched()
 
   const { data } = useTodo()
 

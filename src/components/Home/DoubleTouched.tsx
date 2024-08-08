@@ -1,10 +1,9 @@
 import { Text } from 'react-native'
 
-import { doubleTouchedState } from '@/states'
-import { useValue } from 'atomic-utils'
+import { useDoubleTouched } from '@/states'
 
 export default function DoubleTouched() {
-  const doubleTouched = useValue(doubleTouchedState)
+  const doubleTouched = useDoubleTouched()
 
   return <Text>Double: {doubleTouched}</Text>
 }

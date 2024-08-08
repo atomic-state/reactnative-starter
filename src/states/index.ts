@@ -1,7 +1,8 @@
 import { NavigationProp } from '@react-navigation/native'
-import { atom } from 'atomic-utils'
 
-export const touchedState = atom({
+import { create } from 'atomic-utils'
+
+const touched = create({
   key: 'touched',
   default: 0,
   effects: [
@@ -10,42 +11,47 @@ export const touchedState = atom({
     }
   ],
   actions: {
-    update({ args, dispatch }) {
-      dispatch(args)
+    increase() {
+      touched.setValue(prev => prev + 1)
     },
-    change({ state, args, dispatch }) {
-      switch (args.type) {
-        case '-':
-          return dispatch(state - 1)
-        case '+':
-          return dispatch(state + 1)
-        case 'reset':
-          return dispatch(0)
-        default:
-          break
-      }
+    decrease() {
+      touched.setValue(prev => prev - 1)
+    },
+    reset() {
+      touched.setValue(0)
     }
   },
   persist: true
 })
 
-export const navigationState = atom<NavigationProp<any>>({
+const navigation = create<NavigationProp<any>>({
   key: 'navigation'
 })
 
-export const doubleTouchedState = atom({
+const doubleTouched = create({
   key: 'double',
   get({ get }) {
-    const timesTouched = get(touchedState)
+    const timesTouched = get(touched)
     return timesTouched * 2
   }
 })
 
-export const formatedTextState = atom({
+const formatedText = create({
   key: 'formatedText',
   get({ get }) {
-    const double = get(doubleTouchedState)
+    const double = get(doubleTouched)
 
     return `formatted: {${double}}`
   }
 })
+
+export const useTouched = touched.value
+export const setTouched = touched.setValue
+export const touchedActions = touched.actions
+
+export const useNavigation = navigation.value
+export const setNavigation = navigation.setValue
+
+export const useDoubleTouched = doubleTouched.value
+
+export const useFormattedText = formatedText.value

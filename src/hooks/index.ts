@@ -1,13 +1,9 @@
-import { useValue, useFetch } from 'atomic-utils'
+import { useFetch } from 'atomic-utils'
 
-import { navigationState, touchedState } from '@/states'
-
-export function useNavigation() {
-  return useValue(navigationState)
-}
+import { useTouched } from '@/states'
 
 export function useTodo() {
-  const timesTouched = useValue(touchedState)
+  const timesTouched = useTouched()
 
   return useFetch('/todos/[id]', {
     id: 'todo',

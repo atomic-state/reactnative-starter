@@ -1,24 +1,12 @@
-import { useActions } from 'atomic-utils'
 import { TouchableOpacity } from 'react-native'
-
-import { touchedState } from '@/states'
+import { touchedActions } from '@/states'
 
 export default function UpdateTouchComponent({ children }: any) {
-  const touchedActions = useActions(touchedState)
-
   return (
     <TouchableOpacity
-      onLongPress={() =>
-        touchedActions.change({
-          type: 'reset'
-        })
-      }
+      onLongPress={touchedActions.reset}
       activeOpacity={0.85}
-      onPress={() => {
-        touchedActions.change({
-          type: '+'
-        })
-      }}
+      onPress={touchedActions.increase}
       style={{
         width: '80%',
         height: 200,

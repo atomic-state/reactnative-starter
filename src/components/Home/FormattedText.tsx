@@ -1,10 +1,9 @@
-import { useValue } from 'atomic-utils'
 import { Text } from 'react-native'
 
-import { formatedTextState } from '@/states'
+import { useFormattedText } from '@/states'
 
 export default function FormattedText() {
-  const formattedText = useValue(formatedTextState)
+  const formattedText = useFormattedText()
 
   return <Text>Double: {formattedText}</Text>
 }
